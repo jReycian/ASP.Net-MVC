@@ -1,0 +1,50 @@
+﻿@model Demo3.Models.House
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+</style>
+
+<h1>Create</h1>
+
+<h4>House</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OwnersName" class="control-label"></label>
+                <input asp-for="OwnersName" class="form-control" />
+                <span asp-validation-for="OwnersName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="myProperty" class="control-label"></label>
+                <input asp-for="myProperty" class="form-control" />
+                <span asp-validation-for="myProperty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PropertyValue" class="control-label"></label>
+                <input asp-for="PropertyValue" class="form-control" />
+                <span asp-validation-for="PropertyValue" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success btn-lg" /> | 
+                <button class="btn btn-primary btn-lg">
+                    <a asp-action="Index">Back to List</a>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

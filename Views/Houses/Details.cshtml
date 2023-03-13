@@ -1,0 +1,36 @@
+﻿@model Demo3.Models.House
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>House</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OwnersName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OwnersName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.myProperty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.myProperty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PropertyValue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PropertyValue)
+        </dd>
+    </dl>
+</div>
+<div>
+    <button class="btn btn-warning btn-lg"><a asp-action="Edit" asp-route-id="@Model?.Id" style="color: whitesmoke; text-decoration: none">Edit</a></button> |
+    <button class="btn btn-primary btn-lg"><a asp-action="Index" style="color: whitesmoke; text-decoration: none">Back to List</a></button>
+</div>
